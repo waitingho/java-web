@@ -106,12 +106,24 @@ public class Customer {
         }
         
     }
-    
+        private String firstCharStr = "ABCDEFGHJKLMNPQRSTUVXZWZIO";
         public boolean checkId(String id){
             boolean result = false;
-            if(id!=null && id.length()==10){
-                //....
-                return true;
+            if(id!=null && id.matches("[A-Z][12][0-9][0-9]{8}")){
+                //1.將第一馬英文字轉成對應之數字
+                
+                char firstChar = id.charAt(0);
+                int firstNumber = firstCharStr.indexOf(firstChar)+10;
+                
+                //2.依公式相加
+                int sum = firstNumber/10 + firstNumber%10*9;
+                for (int i = 1; i<9;i++){
+                    sum+=(id.charAt(i)-'0')*(9-i);
+                }
+                sum += id.charAt(9)-'0';
+                
+                //3.加總結果%10為0即正確
+                return sum%10 == 0;
             }else{
                 return false;
             }
