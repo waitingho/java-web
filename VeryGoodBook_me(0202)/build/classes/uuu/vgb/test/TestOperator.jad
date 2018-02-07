@@ -1,0 +1,34 @@
+// Decompiled by DJ v3.7.7.81 Copyright 2004 Atanas Neshkov  Date: 2018/2/1 ¤U¤È 04:01:17
+// Home Page : http://members.fortunecity.com/neshkov/dj.html  - Check often for new version!
+// Decompiler options: packimports(3) 
+// Source File Name:   TestOperator.java
+
+package uuu.vgb.test;
+
+import java.io.PrintStream;
+
+public class TestOperator
+{
+
+    public TestOperator()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        int i = 32;
+        i <<= 2;
+        System.out.println((new StringBuilder()).append("i = ").append(i).toString());
+        i = -32;
+        i >>= 2;
+        System.out.println((new StringBuilder()).append("i = ").append(i).toString());
+        int grate = 55;
+        char a = grate < 65 ? 'D' : 'A';
+        System.out.println(a);
+        int uniPrice = 40;
+        double price = uniPrice <= 100 ? 50D : 99.5D;
+        System.out.println((new StringBuilder()).append("price = ").append(price).toString());
+        Object price2 = uniPrice <= 100 ? ((Object) (Integer.valueOf(50))) : "99.5";
+        System.out.println(price2);
+    }
+}

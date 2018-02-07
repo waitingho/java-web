@@ -1,0 +1,47 @@
+// Decompiled by DJ v3.7.7.81 Copyright 2004 Atanas Neshkov  Date: 2018/2/1 ¤U¤È 03:59:56
+// Home Page : http://members.fortunecity.com/neshkov/dj.html  - Check often for new version!
+// Decompiler options: packimports(3) 
+// Source File Name:   TestOrderService.java
+
+package uuu.vgb.test;
+
+import java.io.PrintStream;
+import uuu.vgb.entity.*;
+import uuu.vgb.service.OrderService;
+
+public class TestOrderService
+{
+
+    public TestOrderService()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        Customer c1 = new Customer("A123456789", "\u5B89\u5B89", "123456", 'M', "eee@eee.com.tw");
+        System.out.println((new StringBuilder()).append("c1 = ").append(c1).toString());
+        Product p = new Product(1, "ipad4", 15000D);
+        System.out.println((new StringBuilder()).append("p = ").append(p).toString());
+        OrderService service = new OrderService();
+        double amount = service.order(c1, p, 2);
+        System.out.println((new StringBuilder()).append("c1\u8CFC\u8CB72\u53F0,amount =").append(amount).toString());
+        System.out.println("******************************");
+        VIP vip = new VIP();
+        vip.setId("A123456789");
+        vip.setName("\u6069\u6069");
+        vip.setPassword("5555555");
+        vip.setGender('F');
+        vip.setEmail("fff@ff.fff.ff");
+        vip.setDiscount(20);
+        System.out.println((new StringBuilder()).append("vip = ").append(vip).toString());
+        Outlet outlet = new Outlet(2, "ipad2", 15000D, 5, 50);
+        System.out.println((new StringBuilder()).append("outlet = ").append(outlet).toString());
+        System.out.println("**************************");
+        double amount2 = service.order(vip, p, 2);
+        System.out.println((new StringBuilder()).append("vip\u8CB7p,2\u53F0,amount2 = ").append(amount2).toString());
+        double amount3 = service.order(c1, outlet, 2);
+        System.out.println((new StringBuilder()).append("c1\u8CB7outlet,2\u53F0amount3 = ").append(amount3).toString());
+        double amount4 = service.order(vip, outlet, 2);
+        System.out.println((new StringBuilder()).append("vip\u8CB7outlet,2\u53F0amount4 = ").append(amount4).toString());
+    }
+}

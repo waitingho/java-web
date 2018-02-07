@@ -1,0 +1,50 @@
+// Decompiled by DJ v3.7.7.81 Copyright 2004 Atanas Neshkov  Date: 2018/2/1 ¤U¤È 04:01:41
+// Home Page : http://members.fortunecity.com/neshkov/dj.html  - Check often for new version!
+// Decompiler options: packimports(3) 
+// Source File Name:   TestEqualsOperator.java
+
+package uuu.vgb.test;
+
+import java.io.PrintStream;
+import uuu.vgb.entity.*;
+
+public class TestEqualsOperator
+{
+
+    public TestEqualsOperator()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        int i = 1;
+        double j = 1.0D;
+        System.out.println((double)i == j);
+        System.out.println((double)i != j);
+        System.out.println(true);
+        boolean b1 = true;
+        boolean b2 = false;
+        System.out.println(b1 == b2);
+        System.out.println(b1 != b2);
+        Product p1 = new Product(1, "mouse", 200D);
+        Product p2 = new Product(1, "mouse", 200D);
+        System.out.println(p1 == p2);
+        System.out.println(p1.equals(p2));
+        p2 = p1;
+        System.out.println(p1 == p2);
+        System.out.println(p1.equals(p2));
+        Customer c1 = new Customer("A123456789", "\u5B89\u5B89", "123456", 'M', "eee@eee.ee");
+        Customer c2 = new Customer("A123456789", "\u5B89\u5B89", "123456", 'M', "eee@eee.ee");
+        System.out.println(c1 == c2);
+        System.out.println(c1.equals(c2));
+        VIP v = new VIP("A123456789", "\u5B89\u5B89", "123456", 'M', "eee@eee.ee", 20);
+        System.out.println(c1 == v);
+        System.out.println(c1.equals(v));
+        System.out.println("----------------------");
+        Outlet o1 = new Outlet(1, "mouse", 20D);
+        System.out.println((new StringBuilder()).append("p1.price:").append(p1.getUnitPrice()).toString());
+        System.out.println((new StringBuilder()).append("o1.price:").append(o1.getUnitPrice()).toString());
+        System.out.println(p1 == o1);
+        System.out.println(p1.equals(o1));
+    }
+}
