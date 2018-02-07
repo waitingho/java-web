@@ -6,6 +6,7 @@
 package uuu.vgb.test;
 
 import uuu.vgb.entity.Product;
+import uuu.vgb.service.ProductService;
 
 /**
  *
@@ -14,27 +15,45 @@ import uuu.vgb.entity.Product;
 public class TestProduct {
     public static void main(String[] args) {
         Product p = new Product();
-        System.out.println(p.id);//0
-        System.out.println(p.name);//null
-        System.out.println(p.unitprice);//0.0
-        System.out.println(p.free);//false
-        System.out.println(p.stock);//0
-        System.out.println(p.description);//null
-        System.out.println(p.photoUrl);//null
+        System.out.println(p.getId());//0
+        System.out.println(p.getName());//null
+        System.out.println(p.getUnitprice());//0.0
+        System.out.println(p.isFree());//false
+        System.out.println(p.getStock());//0
+        System.out.println(p.getDescription());//null
+        System.out.println(p.getPhotoUrl());//null
         
-         p.id = 1;
-         p.name = "跳跳蛋";
-         p.unitprice = 9000;
-         p.free = false;
-         p.stock = 0;
-         p.description = "地方媽媽專用";
-         p.photoUrl = "yyyyy";
-         System.out.println("id = " + p.id);
-         System.out.println("name = " + p.name);
-         System.out.println("uniprice = " + p.unitprice);
-         System.out.println("free = " + p.free);
-         System.out.println("stock = " + p.stock);
-         System.out.println("description = " + p.description);
-         System.out.println("photoUrl = " + p.photoUrl);
+        System.out.println("**********************************");
+    ProductService service = new ProductService();
+    Product pp = service.getProduct(3);
+        System.out.println(pp.getId());
+        System.out.println(pp.getName());
+        System.out.println(pp.getUnitprice());
+        System.out.println(pp.getStock());
+        System.out.println(service.calculateProductInventory(pp));
+        System.out.println("************************************");
+        
+         p.setId(1); 
+         p.setName("跳跳蛋"); 
+         p.setUnitprice(9000);
+         p.setFree(false);
+         p.setStock(0);
+         p.setDescription("地方媽媽專用");
+         p.setPhotoUrl("yyyyy");
+         System.out.println("id = " + p.getId());
+         System.out.println("name = " + p.getName());
+         System.out.println("uniprice = " + p.getUnitprice());
+         System.out.println("free = " + p.isFree());
+         System.out.println("stock = " + p.getStock());       
+         System.out.println("description = " + p.getDescription());
+         System.out.println("photoUrl = " + p.getPhotoUrl());
+         
+         System.out.println("****************************");
+         
+         p = new Product(10,"跳蛋",200,90);
+         System.out.println(p.getId());
+         System.out.println(p.getName());
+         System.out.println(p.getUnitprice());
+         System.out.println(p.getStock());
     }
 }

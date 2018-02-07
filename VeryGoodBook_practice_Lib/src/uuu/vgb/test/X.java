@@ -3,21 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package uuu.vgb.test;
 
 /**
  *
- * @author Patty Tai
+ * @author heweiting
  */
-public class TestLocalVar {
+public class X {
+    static void m(StringBuilder sb1){
+        sb1.append("er");
+    }
     public static void main(String[] args) {
-        int i=0, j=0;
-        if(j==0){
-            i=1;            
-        }else if(j!=0){
-            i=2;            
-        }
-        System.out.println(i);
+        StringBuilder sb2 = new StringBuilder("Moth");
+        m(sb2);
+        System.out.println(sb2);
     }
 }

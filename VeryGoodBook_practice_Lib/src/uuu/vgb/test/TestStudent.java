@@ -3,19 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package uuu.vgb.test;
 
-import java.time.LocalDate;
+import uuu.vgb.entity.Student;
 
 /**
  *
- * @author Patty Tai
+ * @author heweiting
  */
-public class TestLocalDate {
+public class TestStudent {
     public static void main(String[] args) {
-        LocalDate date = LocalDate.of(1992,1,15);
-        System.out.println(date.getDayOfMonth());
+        Student bob = new Student();
+        bob.name = "Bob";
+        bob.age = 16;
+        Student jian = bob;
+//        jian.name = "Jian";
         
+        System.out.println(bob.name);
     }
 }
