@@ -1,0 +1,63 @@
+// Decompiled by DJ v3.7.7.81 Copyright 2004 Atanas Neshkov  Date: 2018/2/8 ¤U¤È 04:39:21
+// Home Page : http://members.fortunecity.com/neshkov/dj.html  - Check often for new version!
+// Decompiler options: packimports(3) 
+// Source File Name:   TestVarArgs.java
+
+package uuu.mod14.test;
+
+import java.io.PrintStream;
+
+public class TestVarArgs
+{
+
+    public TestVarArgs()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        System.out.println(sum(11D, 32.5D));
+        System.out.println(sum(11D, 32.5D, 28D));
+        System.out.println(sum(new double[0]));
+        System.out.println(sum(Integer.valueOf(1)));
+        System.out.println(sum(new double[] {
+            11D, 32.5D, 28D, 25D
+        }));
+        System.out.println(sum(new double[] {
+            11D, 32.5D, 28D, 25D
+        }));
+    }
+
+    public static double sum(double a, double b)
+    {
+        System.out.println("sum(double a, double b)");
+        return a + b;
+    }
+
+    public static double sum(double a, double b, double c)
+    {
+        System.out.println("sum(double a, double b, double c)");
+        return a + b + c;
+    }
+
+    public static double sum(Integer a)
+    {
+        System.out.println("sum(Integer a)");
+        return (double)a.intValue();
+    }
+
+    public static transient double sum(double dataArray[])
+    {
+        System.out.println("sum(double... dataArray)");
+        double sum = 0.0D;
+        double ad[] = dataArray;
+        int i = ad.length;
+        for(int j = 0; j < i; j++)
+        {
+            double data = ad[j];
+            sum += data;
+        }
+
+        return sum;
+    }
+}

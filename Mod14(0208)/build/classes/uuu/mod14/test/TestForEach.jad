@@ -1,0 +1,34 @@
+// Decompiled by DJ v3.7.7.81 Copyright 2004 Atanas Neshkov  Date: 2018/2/8 ¤U¤È 04:13:35
+// Home Page : http://members.fortunecity.com/neshkov/dj.html  - Check often for new version!
+// Decompiler options: packimports(3) 
+// Source File Name:   TestForEach.java
+
+package uuu.mod14.test;
+
+import java.io.PrintStream;
+import java.util.*;
+
+public class TestForEach
+{
+
+    public TestForEach()
+    {
+    }
+
+    public static void main(String args[])
+    {
+        List a = new ArrayList();
+        a.add(Integer.valueOf(45));
+        a.add(Integer.valueOf(67));
+        a.add(Integer.valueOf(33));
+        a.add(Integer.valueOf(21));
+        a.add(Integer.valueOf(9));
+        for(int i = 0; i < a.size(); i++)
+            System.out.println((new StringBuilder()).append("a[").append(i).append("] = ").append(a.get(i)).toString());
+
+        int data;
+        for(Iterator iterator = a.iterator(); iterator.hasNext(); System.out.println((new StringBuilder()).append("data: ").append(data).toString()))
+            data = ((Integer)iterator.next()).intValue();
+
+    }
+}

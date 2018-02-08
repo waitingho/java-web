@@ -81,5 +81,10 @@ public class TestOperators {
         
         String str = ((test=false)?String.valueOf('k'):"M");
         System.out.println(str);
+        
+        
+        int f = 5;
+//        f++;
+        System.out.println(2%2);
     }
 }
