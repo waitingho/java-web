@@ -13,19 +13,20 @@ import java.util.Date;
  * @author heweiting
  */
 public class Customer {
-   
-        private String id;//必要PKey, ROCId
-        private String name="";//必要
-        private String password;
-        private char gender;//必要Ｍ＝男 Ｆ＝女
-        private String email;
-        private Date birthday;
-        private String address;
-        private String phone;
-        private boolean married = false;
-        private int status = 1;
-        
-        public Customer(){}
+
+    private String id;//必要PKey, ROCId
+    private String name = "";//必要
+    private String password;
+    private char gender;//必要Ｍ＝男 Ｆ＝女
+    private String email;
+    private Date birthday;
+    private String address;
+    private String phone;
+    private boolean married = false;
+    private int status = 1;
+
+    public Customer() {
+    }
 
     public Customer(String id, String name, String password) {
         this.id = id;
@@ -41,15 +42,17 @@ public class Customer {
         this.gender = gender;
         this.email = email;
     }
-    
-    
 
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        if (this.checkId(id)) {
+            this.id = id;
+        } else {
+            System.out.println("身份證號不正確" + id);
+        }
     }
 
     public String getName() {
@@ -57,7 +60,12 @@ public class Customer {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && (name.trim()).length() > 0) {
+
+            this.name = name;
+        } else {
+            System.out.println("名字必須給值");
+        }
     }
 
     public String getPassword() {
@@ -65,7 +73,11 @@ public class Customer {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if (password != null && (password = password.trim()).length() > 6) {
+            this.password = password;
+        } else {
+            System.out.println("你他媽密碼長度不夠");
+        }
     }
 
     public char getGender() {
@@ -73,7 +85,11 @@ public class Customer {
     }
 
     public void setGender(char gender) {
-        this.gender = gender;
+        if (gender == 'M' | gender == 'F') {
+            this.gender = gender;
+        } else {
+            System.out.println("打錯 要Ｍ or Ｆ");
+        }
     }
 
     public String getEmail() {
@@ -123,16 +139,32 @@ public class Customer {
     public void setStatus(int status) {
         this.status = status;
     }
-        
-        
-        public int getAge(){
-            int thisYear = Calendar.getInstance().get(Calendar.YEAR);
-            Calendar birthCalendar = Calendar.getInstance();
-            birthCalendar.setTime(birthday);
-            int birthYear = birthCalendar.get(Calendar.YEAR);
-            
-            return(thisYear-birthYear);
-        }
 
+    public int getAge() {
+        int thisYear = Calendar.getInstance().get(Calendar.YEAR);
+        Calendar birthCalendar = Calendar.getInstance();
+        birthCalendar.setTime(birthday);
+        int birthYear = birthCalendar.get(Calendar.YEAR);
+
+        return (thisYear - birthYear);
     }
 
+    public boolean checkId(String id) {
+        boolean result;
+        if (id == null || (id = id.trim().toUpperCase()).length() != 10) {
+            System.out.println("長度不正確");
+            return false;
+        }
+        System.out.println(id);
+         if(!id.matches("[A~Z][12][0-9]{8}")){
+            System.out.println("格式不符");
+            return false;
+        }else{
+             char firstChar = id.charAt(0);
+             int firstNumber;
+             if(firstChar >='A')
+         }
+        
+    }
+
+}

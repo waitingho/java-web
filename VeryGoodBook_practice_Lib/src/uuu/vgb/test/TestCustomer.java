@@ -17,9 +17,9 @@ public class TestCustomer {
     public static void main(String[] args) {
         Customer c1 = new Customer();
         c1.setId("A12345");
-        c1.setName("幹你娘");
-        c1.setGender('M');
-        c1.setPassword ("66666");
+        c1.setName("機掰人");
+        c1.setGender('F');
+        c1.setPassword ("66");
         c1.setEmail("eee@eee.eee");
         c1.setAddress("台北市士林");
         c1.setPhone("333333");
@@ -55,7 +55,7 @@ public class TestCustomer {
         
         System.out.println("****************************");
         
-        c1 = new Customer("A123456789", "靠ㄟ","12345",'M',"eee@eee.eee.ee");
+        c1 = new Customer("A123456789", "靠ㄟ","12345",'Ａ',"eee@eee.eee.ee");
         System.out.println("id : " + c1.getId());
         System.out.println("名字 : " + c1.getName());
         System.out.println("密碼 : " + c1.getPassword());
