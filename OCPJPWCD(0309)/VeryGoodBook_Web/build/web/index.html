@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content ="3" />
+        <!--meta http-equiv="refresh" content="3; url=http://www.uuu.com.tw"/-->
+        <style>
+            #my_list li{
+                display: inline-table;
+                width:250px;
+                margin:10px 5px;
+                box-shadow: 1px 1px 2px gray;
+            }
+
+
+            #my_list h4{
+                font-size: smaller;text_align:center;
+            }
+
+            .product_price{
+                font-size: smaller;
+                padding: 0 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>你</h1>
+            <hr color=pink size="2">
+        </div>
+        <div class="nav">
+            <a href="/vgb/layout.html" >產品清單</a> |
+            <a href="/vgb/login.html">登入</a> |
+            <a href="/vgb/register.html">註冊</a> |
+            <a>購物車</a>
+            <br><br><br>
+
+        </div>
+
+        <div>Welcome
+            <script>
+//                document.write(new Date());
+            </script>
+        </div>
+        <hr>
+        <div>清單元素: ul, ol, table
+            <hr>
+            <h2>無序號清單:ul, li:</h2>
+            <ul id="my_list">
+                <li>
+                    <div style="margin:auto;width: 120px ">
+                        <img style="width: 120px"
+                             src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/078/03/0010780336.jpg&v=5a93efd5&w=348&h=348">
+                    </div> 
+                    <h4> 大師解構再升級！77款網路人氣、名店經典麵包全書</h4>
+
+                    <div class="product_price">
+                        定價：699元<br>
+                        優惠價：79折552元
+                    </div>
+                </li>
+                <li>
+                    <div style="margin:auto;width:120px">
+                        <img style="width: 120px"
+                             src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/R03/007/41/R030074112.jpg&v=5a7c189b&w=348&h=348">
+                    </div> 
+                    <h4> 天下雜誌《Crossing換日線》 連線歐洲 春季號2018</h4>
+                    <div class="product_price">
+                        定價：129元<br>
+                        優惠價：95折123元
+                    </div>
+                </li>
+                <li>
+                    <div style="margin:auto;width:120px">
+                        <img style="width: 120px"
+                             src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/R03/005/40/R030054068.jpg&v=554185a0&w=348&h=348">
+                    </div> 
+                    <h4> BBC Knowledge 國際中文版 5月號/2015 第45期</h4>
+                    <div class="product_price">
+                        定價：220元<br>
+                        優惠價：3折66元
+                    </div>
+                </li>
+                <li>
+                    <div style="margin:auto;width:120px">
+                        <img style="width: 120px"
+                             src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/076/46/0010764686.jpg&v=59b11fbc&w=348&h=348">
+                    </div> 
+                    <h4> 上桌秒殺美食料理家的日日好味</h4>
+                    <div class="product_price">
+                        定價：360元<br>
+                        優惠價：7折252元
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <h2>div, span 做出list-item</h2>
+        <div id="fake_ul">
+            <span>Item1</span>
+            <span>Item2</span>
+            <span>Item3</span>
+            <span>Item4</span>
+        </div>
+        <hr>
+        <h2> table, thead, tbody, tfoot, tr, th, td, caption</h2>
+        <table border ='1' cellspacing='0' cellpadding='3' >
+            <caption>購物車</caption>
+            <thead>
+                <tr>
+                    <th>名稱</th>
+                    <th>定價</th>
+                    <th>折扣</th>
+                    <th>售價</th>
+                    <th>數量</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>大師解構再升級！77款網路人氣、名店經典麵包全書</td>
+                <td>699</td>
+                <td>79折</td>
+                <td>599</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>天下雜誌《Crossing換日線》 連線歐洲 春季號2018</td>
+                <td>129</td>
+                <td>95折</td>
+                <td>200</td>
+                <td>60</td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td colspan='3'>總金額</td>
+                    <td colspan='2'>1126</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

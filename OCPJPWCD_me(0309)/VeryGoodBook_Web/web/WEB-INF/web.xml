@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!--為登入功能產生的驗證碼物件-->
+    <servlet>
+        <description>為登入功能產生的驗證4碼物件</description>
+        <servlet-name>CaptchaImageServlet</servlet-name>
+        <servlet-class>uuu.vgb.view.CaptchaImageServlet</servlet-class>
+        <init-param>
+            <param-name>length</param-name>
+            <param-value>4</param-value>
+            
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CaptchaImageServlet</servlet-name>
+        <url-pattern>/images/captcha.jpg</url-pattern>
+        <url-pattern>/images/captcha.jpeg</url-pattern>
+    </servlet-mapping>
+    
+    <!--為註冊功能產生的驗證碼物件-->
+    <servlet>
+        <servlet-name>RegisterCaptchaImageServlet</servlet-name>
+        <servlet-class>uuu.vgb.view.CaptchaImageServlet</servlet-class>
+        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterCaptchaImageServlet</servlet-name>
+        <url-pattern>/images/register_captcha.jpg</url-pattern>
+        <url-pattern>/images/register_captcha.jpeg</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

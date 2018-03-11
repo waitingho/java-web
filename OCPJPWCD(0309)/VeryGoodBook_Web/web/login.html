@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>會員登入</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script 
+            src="https://code.jquery.com/jquery-1.12.4.js"
+            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+            crossorigin="anonymous">
+                
+        </script>
+    </head>
+
+    <body>
+        <div id="header">
+            <h1>會員登入</h1>
+            <hr color=pink size="2">
+        </div>
+        <div class="nav">
+            <a href="/vgb/layout.html" >產品清單</a> |
+            <a href="/vgb/login.html">登入</a> |
+            <a href="/vgb/register.html">註冊</a> |
+            <a>購物車</a>
+            <br><br><br>
+
+        </div>
+        <div class="section" style="float: left;width: 12%;min-width:8ex">
+            section
+        </div>
+        <div class="article" style="float: left;min-height: 75vh;background-color:pink;width:75%" >
+
+            <form action="login.do" method="POST">
+                <p>
+                    <label>帳號</label>
+                    <input type="text" name="id" placeholder="身分證字號" >
+                </p>
+                <p>
+                    <label>密碼</label>
+                    <input type="password" name="pwd" placeholder="密碼" minlength="6" maxlength="20" required>
+                </p>
+                <p>
+                    <label>驗證碼</label>
+                    <input type="text" name="captcha"  placeholder="請輸入驗證碼" required><br>
+                    <a href="javascript:refreshCaptcha()">
+                        <img id="captcha_img" title="點我更新" src="images/captcha.jpg" style="vertical-align: middle">
+                    </a>
+                    <script>
+                        function refreshCaptcha(){
+                            $("#captcha_img").attr("src","images/captcha.jpg?refresh="+new Date());
+                        }
+                        </script>
+                </p>
+                <input type='submit' value='登入'>
+
+            </form>
+        </div>
+        <div class="aside" style="float:right;width: 12%">
+            aside
+        </div>
+
+        <div class="footer" style="clear:both">
+            <hr>
+            版權所有&copy;幹你娘</div>
+    </body>
+</html>
