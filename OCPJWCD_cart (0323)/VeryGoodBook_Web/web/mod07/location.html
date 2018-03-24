@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>location demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var a = 1;
+            a = true;
+        </script>
+    </head>
+    <body>
+        <div>
+            <h2>location</h2>         
+
+            <div id='protocol'>protocol: </div>
+            <div id='port'>port: </div>
+            <script>
+                alert(location.href);
+                var p = document.getElementById("protocol");
+                p.innerHTML = 'protocol:' + location.protocol;
+
+                var port = document.getElementById("port");
+                port.innerHTML = 'port:' + location.port;
+                
+                function goToGoogleHandler(){
+                    location.href="http://www.google.com";
+                }
+                
+                function sayHello(){
+                    alert("Hello");
+                }
+            </script>               
+            <hr>
+            <input type='button' value='google' onclick='goToGoogleHandler()'>
+            <a href='javascript:sayHello()'>Hello</a>
+        </div>
+    </body>
+</html>
