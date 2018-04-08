@@ -186,6 +186,9 @@ public final class product_005fdetail_jsp extends org.apache.jasper.runtime.Http
       out.write("                margin:10px 3px;\n");
       out.write("                border-radius: 50%;\n");
       out.write("            }\n");
+      out.write("            .select{\n");
+      out.write("                background: #6DD0CD;\n");
+      out.write("            }\n");
       out.write("\n");
       out.write("            ");
       out.write("\n");

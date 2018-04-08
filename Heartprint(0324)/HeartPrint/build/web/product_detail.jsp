@@ -140,6 +140,9 @@
                 margin:10px 3px;
                 border-radius: 50%;
             }
+            .select{
+                background: #6DD0CD;
+            }
 
             <%-----------------------------商品價格CSS-----------------------------%>
             .product_title{
